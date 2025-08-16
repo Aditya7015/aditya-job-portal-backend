@@ -17,12 +17,14 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
-    origin: [
-    "http://localhost:5173",                 // for local dev
+  origin: [
+    "http://localhost:5173",                       // local frontend
+    "http://127.0.0.1:5173",                       // sometimes Vite runs on 127.0.0.1
     "https://aditya-job-portal-frontend.vercel.app" // deployed frontend
   ],
-    credentials:true
-}
+  credentials: true
+};
+
 
 app.use(cors(corsOptions));
 
